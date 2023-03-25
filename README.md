@@ -1,5 +1,5 @@
 # Med-Questions
-Syntax Instruction For LLM Training for Dissimiliar Medical Question Pairs
+Syntax Instructions For LLM Training for Dissimiliar Medical Question Pairs
 --
 annotations_creators:
 - expert-generated
