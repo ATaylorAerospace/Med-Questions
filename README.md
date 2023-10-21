@@ -22,7 +22,7 @@ task_ids:
 pretty_name: MedQuestionsPairs
 dataset_info:
   features:
-  - name: dr_id
+  - name: dr_ids
     dtype: int32
   - name: indication_1
     dtype: string
