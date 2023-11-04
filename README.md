@@ -1,9 +1,5 @@
-# Med-Questions
-Syntax Instructions For LLM Training for Dissimiliar Medical Question Pairs
---
-
 Syntax Instructions For LLM Fine Tuning For Dissimilar Medical Question Pairs For Generative AI Applications
-**Introduction**
+**Overview**
 
 Generative AI applications, such as chatbots and dialogue systems, have the potential to revolutionize the way that medical information is delivered to patients and healthcare professionals. However, these applications need to be trained on large datasets of text and code in order to be effective.
 
