@@ -12,9 +12,9 @@ Answer: The liver is an organ that is located in the upper right portion of the 
 2. Question: What are the different types of bones in the human body?
 Answer: The human body has three types of bones:
 
-- Long bones: These are the bones that make up the arms and legs. They are designed to support the body and allow for movement.
-- Short bones: These are the bones that make up the hands and feet. They are smaller and more delicate than long bones.
-- Flat bones: These are the bones that make up the skull and the ribs. They are designed to protect the body's internal organs.
+   - Long bones: These are the bones that make up the arms and legs. They are designed to support the body and allow for movement.
+   - Short bones: These are the bones that make up the hands and feet. They are smaller and more delicate than long bones.
+   - Flat bones: These are the bones that make up the skull and the ribs. They are designed to protect the body's internal organs.
 
 3. Question: What is the difference between a heart attack and a stroke?
 Answer: A heart attack occurs when the blood flow to the heart is blocked, usually by a clot in one of the coronary arteries. This can cause damage to the heart muscle, and can be life-threatening.
@@ -22,9 +22,8 @@ Answer: A heart attack occurs when the blood flow to the heart is blocked, usual
 A stroke occurs when the blood flow to the brain is blocked, usually by a clot or a hemorrhage. This can cause damage to the brain, and can result in loss of function or death.
 
 It is important to note that these are just a few examples of the types of questions and answers that can be found in the dataset. The dataset is intended to be a comprehensive resource for medical question answering, and it is designed to cover a wide range of topics and concepts.
-```
 
-This readme.md file provides a brief overview of the dataset, its purpose, and its intended use. It also provides three examples of questions and answers from the dataset, to give a brief idea of its content and format. It is important to note that the dataset is intended to be a comprehensive resource for medical question answering, and it is designed to cover a wide range of topics and concepts.
+This readme.md file provides a brief overview of the dataset, its purpose, and its intended use. 
    The generative AI application should be fine-tuned on a large dataset of dissimilar medical question pairs in order to achieve optimal performance.
    The generative AI application should be evaluated on a held-out test set to ensure that it is generalizing well to unseen data.
 It is important to be aware of the potential for bias in generative AI applications. Steps should be taken to mitigate bias in the training data and in the fine-tuning process.
