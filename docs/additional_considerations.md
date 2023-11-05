@@ -1,4 +1,4 @@
-# Additional Considerations for Creating a Medical Question Answering Dataset in Weaviate and Fine-Tuning a Generative AI Application
+# Additional Considerations for Creating a Medical Question Answering Dataset
 
 When creating a medical question answering dataset there are a few additional considerations to keep in mind.
 
