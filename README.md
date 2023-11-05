@@ -1,6 +1,3 @@
- Here is a detailed and properly formatted readme.md for a GitHub repository for a medical question answering dataset that will be used for fine-tuning a LLM:
-
-```
 # Medical Question Answering Dataset
 
 This dataset is intended to be a comprehensive collection of medical questions and answers. It is designed to be used for fine-tuning a large language model (LLM) for medical question answering tasks.
