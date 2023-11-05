@@ -1,4 +1,4 @@
-## Syntax Instructions for Creating a Medical Question Answering Dataset in Weaviate and Fine-Tuning a Generative AI Application
+## Syntax Instructions for Creating a Medical Question Answering Dataset
 
 ### 1. Introduction
 
