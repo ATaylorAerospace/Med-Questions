@@ -18,7 +18,6 @@ Answer: The human body has three types of bones:
 
 3. Question: What is the difference between a heart attack and a stroke?
 Answer: A heart attack occurs when the blood flow to the heart is blocked, usually by a clot in one of the coronary arteries. This can cause damage to the heart muscle, and can be life-threatening.
-
 A stroke occurs when the blood flow to the brain is blocked, usually by a clot or a hemorrhage. This can cause damage to the brain, and can result in loss of function or death.
 
 It is important to note that these are just a few examples of the types of questions and answers that can be found in the dataset. The dataset is intended to be a comprehensive resource for medical question answering, and it is designed to cover a wide range of topics and concepts.
