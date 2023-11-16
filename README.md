@@ -19,9 +19,10 @@ Here are examples of questions and answers from the dataset:
 **Question:** What are the different types of bones in the human body?
 
 **Answer:** The human body has three types of bones:
-      - **Long bones:** These are the bones that make up the arms and legs. They are designed to support the body and allow for movement.
-      - **Short bones:** These are the bones that make up the hands and feet. They are smaller and more delicate than long bones.
-      - **Flat bones:** These are the bones that make up the skull and the ribs. They are designed to protect the body's internal organs.
+
+      - Long bones: These are the bones that make up the arms and legs. They are designed to support the body and allow for movement.
+      - Short bones: These are the bones that make up the hands and feet. They are smaller and more delicate than long bones.
+      - Flat bones: These are the bones that make up the skull and the ribs. They are designed to protect the body's internal organs.
 
 **Question:** What is the difference between a heart attack and a stroke?
 
