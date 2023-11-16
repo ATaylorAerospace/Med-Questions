@@ -12,21 +12,21 @@ The dataset consists of a collection of medical questions, ranging from basic to
 
 Here are examples of questions and answers from the dataset:
 
-❓**Question:** What is the role of the liver in the human body?
+**Question:** What is the role of the liver in the human body?
 
-   **Answer:** The liver is an organ that is located in the upper right portion of the abdomen. It is responsible for a variety of functions, including the production of bile, the digestion of fats, and the removal of waste products from the blood. The liver also plays a role in the metabolism of drugs and other substances.
+**Answer:** The liver is an organ that is located in the upper right portion of the abdomen. It is responsible for a variety of functions, including the production of bile, the digestion of fats, and the removal of waste products from the blood. The liver also plays a role in the metabolism of drugs and other substances.
 
-❓**Question:** What are the different types of bones in the human body?
+**Question:** What are the different types of bones in the human body?
 
-   **Answer:** The human body has three types of bones:
+**Answer:** The human body has three types of bones:
       - **Long bones:** These are the bones that make up the arms and legs. They are designed to support the body and allow for movement.
       - **Short bones:** These are the bones that make up the hands and feet. They are smaller and more delicate than long bones.
       - **Flat bones:** These are the bones that make up the skull and the ribs. They are designed to protect the body's internal organs.
 
-❓**Question:** What is the difference between a heart attack and a stroke?
+**Question:** What is the difference between a heart attack and a stroke?
 
-   **Answer:** A heart attack occurs when the blood flow to the heart is blocked, usually by a clot in one of the coronary arteries. This can cause damage to the heart muscle, and can be life-threatening.
-   A stroke occurs when the blood flow to the brain is blocked, usually by a clot or a hemorrhage. This can cause damage to the brain, and can result in loss of function or death.
+**Answer:** A heart attack occurs when the blood flow to the heart is blocked, usually by a clot in one of the coronary arteries. This can cause damage to the heart muscle, and can be life-threatening.
+A stroke occurs when the blood flow to the brain is blocked, usually by a clot or a hemorrhage. This can cause damage to the brain, and can result in loss of function or death.
 
 ## 💁**Additional Information:**
 
