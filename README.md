@@ -31,10 +31,10 @@ A stroke occurs when the blood flow to the brain is blocked, usually by a clot o
 
 ## 💁**Additional Information:**
 
-It is important to note that these are just a few examples of the types of questions and answers that can be found in the dataset. The dataset is intended to be a comprehensive resource for medical question answering, and it is designed to cover a wide range of topics and concepts.
+It is important to note that these are just a few examples of the types of questions and answers that can be found in the dataset. The dataset is intended to be a comprehensive resource for medical question answering, and it is designed to cover a wide range of medical topics and concepts.
 
 ## 🧐**Best Practices for AI Training and Bias Mitigation:**
 
-- The generative AI application should be fine-tuned on a large dataset of dissimilar medical question pairs in order to achieve optimal performance.
+- The generative AI application should be fine-tuned on a large dataset of dissimilar medical question pairs in order to achieve optimal LLM performance.
 - The generative AI application should be evaluated on a held-out test set to ensure that it is generalizing well to unseen data.
 - It is important to be aware of the potential for bias in generative AI applications. Steps should be taken to mitigate bias in the training data and in the fine-tuning process.
