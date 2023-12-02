@@ -14,7 +14,7 @@ Here are examples of questions and answers from the dataset:
 
 **Question:** What is the role of the liver in the human body?
 
-**Answer:** The liver is an organ that is located in the upper right portion of the abdomen. It is responsible for a variety of functions, including the production of bile, the digestion of fats, and the removal of waste products from the blood. The liver also plays a role in the metabolism of drugs and other substances.
+**Answer:** The liver is an organ that is located in the upper right portion of the abdomen. It is responsible for a variety of important functions, including the production of bile, the digestion of fats, and the removal of waste products from the blood. The liver also plays a role in the metabolism of drugs and other substances in the body.
 
 **Question:** What are the different types of bones in the human body?
 
