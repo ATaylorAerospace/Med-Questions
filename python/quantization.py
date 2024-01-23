@@ -39,6 +39,7 @@ plt.figure(figsize=(10, 12))
 
 plt.subplot(4, 1, 1)
 plt.plot(x, y, label="Original")
+plt.plot(x, y_unquant_16bit, label="Unquantized_16bit")
 plt.plot(x, y_unquant_8bit, label="Unquantized_8bit")
 plt.plot(x, y_unquant_4bit, label="Unquantized_4bit")
 plt.legend()
