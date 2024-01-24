@@ -29,14 +29,14 @@ batch_size = 2  # Adjust the batch size as needed, for example: batch_size = 8
 num_epochs = 3  # Adjust the number of training epochs as needed, for example: num_epochs = 10
 learning_rate = 2e-5  # Adjust the learning rate as needed, for example: learning_rate = 5e-5
 
-# Define the validation metrics
+# Define validation metrics
 val_metric = 'f1'  # Change to 'accuracy', 'recall', or 'precision' for different evaluation metrics
 
 # Define the training optimizer
 optimizer = AdamW(model.parameters(), lr=learning_rate)
 total_steps = len(train_dataset) * num_epochs // batch_size  # Calculate the total number of training steps
 
-# Define the learning rate scheduler
+# Define the dataset learning rate scheduler
 scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=0, num_training_steps=total_steps)
 
 # Define the training and validation functions
