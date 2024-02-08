@@ -14,7 +14,7 @@ val_dataset = ...  # Add your validation dataset here
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
 
-# Define the training parameters
+# Define the required training parameters
 batch_size = 2  # Adjust the batch size as needed
 num_epochs = 3  # Adjust the number of training epochs as needed
 learning_rate = 2e-5  # Adjust the learning rate as needed
