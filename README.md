@@ -36,5 +36,4 @@ It is important to note that these are just a few examples of the types of quest
 ## 🧐**Best Practices for AI Training and Bias Mitigation:**
 
 - The generative AI application should be fine-tuned on a large dataset of dissimilar medical question pairs in order to achieve optimal LLM performance.
-- The generative AI application should be evaluated on a held-out test set to ensure that it is generalizing well to unseen data.
 - It is important to be aware of the potential for bias in generative AI applications. Steps should be taken to mitigate bias in the training data and in the fine-tuning process.
