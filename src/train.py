@@ -24,8 +24,8 @@ train_dataset = ...  # Add your training dataset here (replace the ellipses)
 val_dataset = ...  # Add your validation dataset here (replace the ellipses)
 
 # Define the training parameters
-batch_size = 2  # Adjust the batch size as needed, for example: batch_size = 8
-num_epochs = 3  # Adjust the number of training epochs as needed, for example: num_epochs = 10
+batch_size = 4  # Adjust the batch size as needed, for example: batch_size = 8
+num_epochs = 5  # Adjust the number of training epochs as needed, for example: num_epochs = 10
 learning_rate = 2e-5  # Adjust the learning rate as needed, for example: learning_rate = 5e-5
 
 # Define the validation metrics
