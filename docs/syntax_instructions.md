@@ -53,6 +53,4 @@ To maintain the model, you will need to:
 - Update the model: The model should be updated as new data becomes available to ensure that it is accurate and relevant.
 - Retrain the model: The model should be retrained as new data becomes available to ensure that it is accurate and relevant.
 
-### 8. Conclusion
 
-These syntax instructions provide a detailed guide on how to create a medical question answering dataset in Weaviate and fine-tune a generative AI application
