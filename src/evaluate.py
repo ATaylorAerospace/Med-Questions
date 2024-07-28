@@ -25,8 +25,8 @@ train_dataset = ...  # Add your training dataset here (replace the ellipses)
 test_dataset = ...  # Add your test dataset here (replace the ellipses)
 
 # Define the training parameters
-batch_size = 2  # Adjust the batch size as needed, for example: batch_size = 8
-num_epochs = 3  # Adjust the number of training epochs as needed, for example: num_epochs = 10
+batch_size = 4  # Adjust the batch size as needed, for example: batch_size = 8
+num_epochs = 5  # Adjust the number of training epochs as needed, for example: num_epochs = 10
 learning_rate = 2e-5  # Adjust the learning rate as needed, for example: learning_rate = 5e-5
 
 # Define validation metrics
@@ -94,5 +94,5 @@ torch.save(model.state_dict(), model_path)
 print('Trained model saved to:', model_path)
 ```
 
-In the above code, the training and validation datasets are defined as `train_dataset` and `val_dataset`, respectively. The tokenizer and model are defined as `tokenizer` and `model`, respectively. The training parameters are defined as `batch_size`, `num_epochs`, and `learning_rate`. The validation metrics are defined as `val_metric`, which can be set to 'accuracy', 'f1', 'recall', or 'precision' to evaluate the model on the validation dataset. The training and validation functions are defined as `train` and `validate`, respectively. The fine-tuning of the model on the training dataset is performed using the `train` function, and the evaluation of the model on the validation dataset is performed using the `validate` function. The trained model is saved using the `torch.save` function.
+# In the above code, the training and validation datasets are defined as `train_dataset` and `val_dataset`, respectively. The tokenizer and model are defined as `tokenizer` and `model`, respectively. The training parameters are defined as `batch_size`, `num_epochs`, and `learning_rate`. The validation metrics are defined as `val_metric`, which can be set to 'accuracy', 'f1', 'recall', or 'precision' to evaluate the model on the validation dataset. The training and validation functions are defined as `train` and `validate`, respectively. The fine-tuning of the model on the training dataset is performed using the `train` function, and the evaluation of the model on the validation dataset is performed using the `validate` function. The trained model is saved using the `torch.save` function.
 
