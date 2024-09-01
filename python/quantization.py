@@ -23,7 +23,7 @@ print(unquant_4)
 unquant_8 = unquantize(quant_8, 8)
 print(unquant_8)
 
-# Original numbers: 0.6222
+# Original numbers: 0.5222
 # Unquantized values: 0.571 for 4-bit and 0.622 for 8-bit quantization
 
 x = np.linspace(-1, 1, 50)
