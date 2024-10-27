@@ -1,10 +1,8 @@
-```python
 import torch
 from torch import optim
 from torch.utils.data import DataLoader
 from transformers import AdamW, get_linear_schedule_with_warmup
-from transformers import BertTokenizer, BertForSequenceClassification, BertConfig
-from sklearn.model_selection import train_test_split
+from transformers import BertTokenizer, BertForSequenceClassification
 from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score
 
 # Define the training and validation datasets
@@ -16,73 +14,77 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
 
 # Define the training parameters
-batch_size = 2  # Adjust the batch size as needed
-num_epochs = 3  # Adjust the number of training epochs as needed
+batch_size = 4  # Adjust the batch size as needed
+num_epochs = 5  # Adjust the number of training epochs as needed
 learning_rate = 2e-5  # Adjust the learning rate as needed
 
-# Define the training and validation datasets
-train_dataset = ...  # Add your training dataset here (replace the ellipses)
-test_dataset = ...  # Add your test dataset here (replace the ellipses)
+# Define the training DataLoader
+def collate_fn(batch):
+    input_ids, attention_masks, token_type_ids, labels = zip(*batch)
+    return {
+        'input_ids': torch.stack(input_ids),
+        'attention_mask': torch.stack(attention_masks),
+        'token_type_ids': torch.stack(token_type_ids),
+        'labels': torch.tensor(labels)
+    }
 
-# Define the training parameters
-batch_size = 4  # Adjust the batch size as needed, for example: batch_size = 8
-num_epochs = 5  # Adjust the number of training epochs as needed, for example: num_epochs = 10
-learning_rate = 2e-5  # Adjust the learning rate as needed, for example: learning_rate = 5e-5
-
-# Define validation metrics
-val_metric = 'f1'  # Change to 'accuracy', 'recall', or 'precision' for different evaluation metrics
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, collate_fn=collate_fn)
+test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, collate_fn=collate_fn)
 
 # Define the training optimizer
 optimizer = AdamW(model.parameters(), lr=learning_rate)
-total_steps = len(train_dataset) * num_epochs // batch_size  # Calculate the total number of training steps
+total_steps = len(train_loader) * num_epochs
 
-# Define the dataset learning rate scheduler
+# Define the learning rate scheduler
 scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=0, num_training_steps=total_steps)
 
-# Define the training and validation functions
-def train(model, optimizer, scheduler, train_dataset, tokenizer):
+# Define the training function
+def train(model, optimizer, scheduler, train_loader):
     model.train()
-    for batch in train_dataset:
-        optimizer.zero_grad()
-        input_ids, input_mask, segment_ids, label = batch
-        outputs = model(input_ids=input_ids, token_type_ids=segment_ids, attention_mask=input_mask, labels=label)
-        loss = outputs.loss
-        loss.backward()
-        optimizer.step()
-        scheduler.step()
+    for epoch in range(num_epochs):
+        for batch in train_loader:
+            optimizer.zero_grad()
+            input_ids = batch['input_ids'].to(model.device)
+            attention_mask = batch['attention_mask'].to(model.device)
+            token_type_ids = batch['token_type_ids'].to(model.device)
+            labels = batch['labels'].to(model.device)
+            outputs = model(input_ids=input_ids, token_type_ids=token_type_ids, attention_mask=attention_mask, labels=labels)
+            loss = outputs.loss
+            loss.backward()
+            optimizer.step()
+            scheduler.step()
+        print(f"Epoch {epoch + 1}/{num_epochs}, Loss: {loss.item()}")
 
-def validate(model, val_dataset, tokenizer):
+# Define the validation function
+def validate(model, val_loader):
     model.eval()
     predictions = []
     actual_labels = []
-    for batch in val_dataset:
-        input_ids, input_mask, segment_ids, label = batch
-        with torch.no_grad():
-            outputs = model(input_ids=input_ids, token_type_ids=segment_ids, attention_mask=input_mask)
-            predicted_label = torch.argmax(outputs.logits, dim=1)
-            predictions.append(predicted_label.item())
-            actual_labels.append(label)
-    predictions = torch.cat(predictions, dim=0)
-    actual_labels = torch.cat(actual_labels, dim=0)
-    accuracy = accuracy_score(predictions, actual_labels)
-    f1 = f1_score(predictions, actual_labels, average='macro')
-    recall = recall_score(predictions, actual_labels, average='macro')
-    precision = precision_score(predictions, actual_labels, average='macro')
+    with torch.no_grad():
+        for batch in val_loader:
+            input_ids = batch['input_ids'].to(model.device)
+            attention_mask = batch['attention_mask'].to(model.device)
+            token_type_ids = batch['token_type_ids'].to(model.device)
+            labels = batch['labels'].to(model.device)
+            outputs = model(input_ids=input_ids, token_type_ids=token_type_ids, attention_mask=attention_mask)
+            predicted_labels = torch.argmax(outputs.logits, dim=1)
+            predictions.extend(predicted_labels.cpu().numpy())
+            actual_labels.extend(labels.cpu().numpy())
+    accuracy = accuracy_score(actual_labels, predictions)
+    f1 = f1_score(actual_labels, predictions, average='macro')
+    recall = recall_score(actual_labels, predictions, average='macro')
+    precision = precision_score(actual_labels, predictions, average='macro')
     return accuracy, f1, recall, precision
 
-# Define the training and validation functions
-train_function = train
-validate_function = validate
+# Move model to device
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model.to(device)
 
-# Fine-tune the model on the training dataset
-train_dataset = ...  # Add your training dataset here (replace the ellipses)
-test_dataset = ...  # Add your test dataset here (replace the ellipses)
-
-# Fine-tune the model on the training dataset
-train(model, optimizer, scheduler, train_dataset, tokenizer)
+# Train the model
+train(model, optimizer, scheduler, train_loader)
 
 # Evaluate the model on the test dataset
-accuracy, f1, recall, precision = validate(model, test_dataset, tokenizer)
+accuracy, f1, recall, precision = validate(model, test_loader)
 print('Test accuracy:', accuracy)
 print('Test f1:', f1)
 print('Test recall:', recall)
@@ -92,7 +94,5 @@ print('Test precision:', precision)
 model_path = 'trained_model.pt'
 torch.save(model.state_dict(), model_path)
 print('Trained model saved to:', model_path)
-```
 
-# In the above code, the training and validation datasets are defined as `train_dataset` and `val_dataset`, respectively. The tokenizer and model are defined as `tokenizer` and `model`, respectively. The training parameters are defined as `batch_size`, `num_epochs`, and `learning_rate`. The validation metrics are defined as `val_metric`, which can be set to 'accuracy', 'f1', 'recall', or 'precision' to evaluate the model on the validation dataset. The training and validation functions are defined as `train` and `validate`, respectively. The fine-tuning of the model on the training dataset is performed using the `train` function, and the evaluation of the model on the validation dataset is performed using the `validate` function. The trained model is saved using the `torch.save` function.
 
