@@ -4,9 +4,7 @@
 
 ## 💁**Overview:**
 
-This dataset is intended to be a comprehensive collection of medical questions and answers. It is designed to be used for fine-tuning a large language model (LLM) for medical question answering tasks.
-
-The dataset consists of a collection of medical questions, ranging from basic to complex, and their corresponding answers. The questions are organized into a plurality of categories, including anatomy, physiology, and medicine, to name a few. The answers are provided in a concise and informative manner, with a focus on providing the necessary information to answer the question.
+This dataset is a comprehensive collection of medical questions and answers, ranging from basic to complex. It's designed to fine-tune LLMs for medical question answering. Questions are categorized into anatomy, physiology, medicine, and more, and answers are concise and informative.
 
 ## 📖**Examples:**
 
